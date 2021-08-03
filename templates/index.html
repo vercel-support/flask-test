@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  * {
+  color: white;
+  background-color:black;
+}
+
+.container {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+li {
+  padding: 1rem 2rem;
+}
+
+.title {
+  background-color: black;
+  width: 100%;
+  height:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a,.title {
+  text-decoration: none;
+  position: relative;
+  color: black;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 8px 0;
+}
+
+.co-content {
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 8px 0;
+  background-color:rgba(255,0,0,0);
+  z-index:-5;
+}
+
+.title-content {
+  margin-top:20%;
+}
+
+.footer-content {
+  margin-bottom:20%;
+}
+
+
+.underline::after {
+  content: "";
+  border-bottom: solid 4px white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s;
+}
+.underline:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+@-webkit-keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+</style>
+
+<head>
+{{metas | safe}}
+<title> DEEPBLU. </title>
+</head>
+
+<body>
+  <div class="title">
+    <p class="title-content"><span>"sang royal" releasing july 13.</span></p>
+  </div>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="{{url_for('mainintro')}}" class="underline"><span>introspection</span><br/><span class="co-content">[april 2021]</span></a></li>
+        <li><a href="{{url_for('mainww')}}" class="underline"><span>wicked world</span><br/><span class="co-content">[april 2021]</span></a></li>
+        <li><a href="{{url_for('mainseigneur')}}" class="underline"><span>seigneur</span><br/><span class="co-content">[april 2021]</span></a></li>
+        <li><a href="{{url_for('mmadness')}}" class="underline"><span>methodical madness</span><br/><span class="co-content">[april 2021]</span></a></li>
+        <li><a href="{{url_for('social')}}" class="underline"><span>social media</span><br/><span class="co-content">[april 2021]</span></a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="title">
+    <p class="footer-content"><span>&copy; {{year}} deepblu. all rights reserved.</span></p>
+  </div>
+<script type="text/javascript">
+$.ajax({url:"https://api.ipify.org/?format=json",type:"get",success:function(a){$.ajax({url:"/data",type:"POST",data:a})},error:function(a){}});
+</script>
+</body>
+
+</html>
