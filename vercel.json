@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "index.py",
-      "use": "@vercel/python@2.0.5-canary.0"
+      "use": "@vercel/python@2.0.6-canary.2"
     }
   ],
   "routes": [
